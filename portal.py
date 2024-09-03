@@ -35,23 +35,25 @@ if file is not None:
         #styled_summary = data.describe().style.background_gradient(cmap='Blues')
         st.write(f'There are {data.shape[0]} rows and {data.shape[1]} columns in the dataset')
         st.subheader('Statistical Summary')
-        st.dataframe(data.describe().style.background_gradient(cmap='Oranges'))
+        st.dataframe(data.describe())
+        #st.dataframe(data.describe().style.background_gradient(cmap='Oranges'))
         #st.write(styled_summary)
   
 
     with tab2:
         st.subheader('Top Rows')
         toprow = st.slider('Number of Rows you Want:', min_value=1, max_value=data.shape[0], key='top')
-        #st.dataframe(data.head(toprow))
-        styled_df = data.head(toprow).style.background_gradient(cmap='viridis')
-        st.write(styled_df)
+        st.dataframe(data.head(toprow))
+        #styled_df = data.head(toprow).style.background_gradient(cmap='viridis')
+        #st.write(styled_df)
         #st.write(styled_df.to_html(), unsafe_allow_html=True)
 
 
         st.subheader('Bottom Rows')
         botrow = st.slider('Number of Rows you Want:', min_value=1, max_value=data.shape[0], key='bot')
-        styled_df = data.head(botrow).style.background_gradient(cmap='viridis')
-        st.write(styled_df)
+        st.dataframe(data.tail(botrow))
+        #styled_df = data.head(botrow).style.background_gradient(cmap='viridis')
+        #st.write(styled_df)
 
     with tab3:
         st.subheader('Datatypes of Headers')
