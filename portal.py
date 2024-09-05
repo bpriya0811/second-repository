@@ -6,6 +6,10 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
+st.set_page_config(
+    page_title='Dynamic Data Portal',
+    page_icon=':chart_with_upwards_trend:'
+)
 hide_streamlit_style = """
             <style>
             #MainMenu {visibility: hidden;}
@@ -15,11 +19,6 @@ hide_streamlit_style = """
             """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
-
-st.set_page_config(
-    page_title='Dynamic Data Portal',
-    page_icon=':chart_with_upwards_trend:'
-)
 st.title(':red[Data] at Your Fingertips')
 st.subheader('💻From Data to Decisions: Elevate Your Business Performance',divider='rainbow')
 
