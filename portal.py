@@ -6,8 +6,15 @@ import os
 import warnings
 warnings.filterwarnings('ignore')
 
-current_dir = Path(__file__).parent if '__file__' in locals() else Path.cwd()
-css_file = current_dir/'style.css'
+hide_streamlit_style = """
+            <style>
+            #MainMenu {visibility: hidden;}
+            footer {visibility: hidden;}
+            header {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 
 
 st.set_page_config(
