@@ -16,7 +16,6 @@ hide_streamlit_style = """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
-
 st.set_page_config(
     page_title='Dynamic Data Portal',
     page_icon=':chart_with_upwards_trend:'
